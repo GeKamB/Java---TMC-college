@@ -1,5 +1,5 @@
 
-import java.util.Scanner;
+import java.util.*;
 
 class BankAccount {
     private double accBalance; 
@@ -48,40 +48,38 @@ class BankAccount {
         return accName;
     }
     void operate() {
+        int choice=0;
+    while(choice != 6){
+        choice = 0;
         System.out.println("Hello " + accName + " What you would like to do? ");
         System.out.println("1. display balance \n 2.Withdraw \n 3.Deposit \n 4.Deposit History\n 5.Withdraw History\n 6.Quit ");
         System.out.println();
-        int choice = bankScanner.nextInt();
+        choice = bankScanner.nextInt();
         switch (choice) {
             case 1:
             System.out.println(displayBalance());;
             System.out.println();
-            operate();                
+                
                 break;
             case 2:
             withdraw();
-            System.out.println();
-            operate();
+          System.out.println();
                 break;
             case 3: 
             deposit();
-            operate();
+                break;
             case 4:
-                System.out.println("DEPOSIT HISTORY:");
+              System.out.println("DEPOSIT HISTORY:");
                 displayArray(depHistory);
                 System.out.println();
-                operate();
                 break;
             case 5:
                 System.out.println("Withdrawals History:");
                 displayArray(withdrawHistory);
                 System.out.println();
-                operate();
                 break;
-            case 6: 
-                break;
-
         }
+    }
     }
     void displayArray(double arr[]) {
         for(int i = 0; i < arr.length; i++)
