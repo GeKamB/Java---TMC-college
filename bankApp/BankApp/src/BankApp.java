@@ -52,18 +52,15 @@ class BankAccount {
     while(choice != 6){
         choice = 0;
         System.out.println("Hello " + accName + " What you would like to do? ");
-        System.out.println("1. display balance \n 2.Withdraw \n 3.Deposit \n 4.Deposit History\n 5.Withdraw History\n 6.Quit ");
+        System.out.println(" 1. display balance \n 2.Withdraw \n 3.Deposit \n 4.Deposit History\n 5.Withdraw History\n 6.Quit ");
         System.out.println();
         choice = bankScanner.nextInt();
         switch (choice) {
             case 1:
-            System.out.println(displayBalance());;
-            System.out.println();
-                
+            System.out.println(displayBalance());
                 break;
             case 2:
             withdraw();
-          System.out.println();
                 break;
             case 3: 
             deposit();
@@ -71,18 +68,17 @@ class BankAccount {
             case 4:
               System.out.println("DEPOSIT HISTORY:");
                 displayArray(depHistory);
-                System.out.println();
                 break;
             case 5:
                 System.out.println("Withdrawals History:");
                 displayArray(withdrawHistory);
-                System.out.println();
                 break;
         }
     }
     }
     void displayArray(double arr[]) {
         for(int i = 0; i < arr.length; i++)
+            if(arr[i] > 0)
             System.out.println(arr[i]);
     }
 }
