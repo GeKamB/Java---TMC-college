@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.Date;
 class NewEmployee {
     String name;
     String id;
@@ -8,10 +7,11 @@ class NewEmployee {
     
     
 
-    public NewEmployee(String name, String id, float salary, LocalDate hirDate) {
+    public NewEmployee(String name, String id, float salary, LocalDate hireDate) {
         this.name = name;
         this.id = id;
         this.salary = salary;
+        this.hireDate = hireDate;
         
     }
     public void displayInfo(){
